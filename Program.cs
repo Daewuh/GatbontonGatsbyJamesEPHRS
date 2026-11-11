@@ -4,7 +4,7 @@ namespace EPHRS;
 
 public class Program
 {
-    // Starts EMPTY (0 pre-defined records), as required.
+    // Starts empty (0 pre-defined records), as required.
     private static readonly List<Employee> employees = new();
     private static int nextId = 1001;
 
@@ -40,7 +40,7 @@ public class Program
         }
     }
 
-    // ---------------------------------------------------------------- CREATE
+    // CREATE
     private static void CreateEmployee()
     {
         Console.WriteLine("\n--- Create Employee ---");
@@ -62,14 +62,14 @@ public class Program
         Console.WriteLine($"Employee created with Id {emp.Id}.");
     }
 
-    // ------------------------------------------------------------------ READ
+    // READ
     private static void ReadEmployees()
     {
         Console.WriteLine("\n--- All Employees ---");
         PrintTable(employees.OrderBy(e => e.Id));
     }
 
-    // ---------------------------------------------------------- SEARCH/FILTER
+    // SEARCH/FILTER
     private static void SearchMenu()
     {
         Console.WriteLine("\n--- Search / Filter ---");
@@ -115,7 +115,7 @@ public class Program
         PrintTable(result.OrderBy(e => e.LastName).ThenBy(e => e.FirstName));
     }
 
-    // ---------------------------------------------------------------- UPDATE
+    // UPDATE
     private static void UpdateEmployee()
     {
         Console.WriteLine("\n--- Update Employee ---");
@@ -149,7 +149,7 @@ public class Program
         Console.WriteLine("Employee updated.");
     }
 
-    // ---------------------------------------------------------------- DELETE
+    // DELETE
     private static void DeleteEmployee()
     {
         Console.WriteLine("\n--- Delete Employee ---");
@@ -165,7 +165,7 @@ public class Program
         else Console.WriteLine("Delete cancelled.");
     }
 
-    // --------------------------------------------------------------- DISPLAY
+    // DISPLAY
     private static void PrintTable(IEnumerable<Employee> rows)
     {
         var list = rows.ToList();
@@ -186,7 +186,7 @@ public class Program
                           $"Total net: {list.Sum(x => x.NetSalary):N2} | Active: {list.Count(x => x.IsActive)}");
     }
 
-    // --------------------------------------------------------- INPUT HELPERS
+    // INPUT HELPERS
     private static string ReadString(string prompt)
     {
         while (true)
